@@ -45,7 +45,7 @@
     </div>
 
     <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
+        <ul class="sidebar-nav nav">
             <li class="sidebar-brand"><a href="#">SimplePOS Guide</a></li>
             <li><a class="scroll-to" href="#install">Install Guide</a></li>
             <!-- <li><a href="#update">Update Guide</a></li> -->
@@ -667,7 +667,12 @@
     <div class="set" id="guide">
         <div class="set-description">
             <h3>User Guide</h3>
-            <img src="images/spos.png" alt="SimplePOS" class="img-responsive img-thumbnail">
+            <img src="images/pos.png" alt="SimplePOS" class="img-responsive img-thumbnail"><br><br>
+            <img src="images/db.png" alt="SimplePOS" class="img-responsive img-thumbnail"><br><br>
+            <img src="images/add_product.png" alt="SimplePOS" class="img-responsive img-thumbnail"><br><br>
+            <img src="images/sales.png" alt="SimplePOS" class="img-responsive img-thumbnail"><br><br>
+            <img src="images/report.png" alt="SimplePOS" class="img-responsive img-thumbnail"><br><br>
+            <img src="images/settings.png" alt="SimplePOS" class="img-responsive img-thumbnail">
 
         </div>
     </div>
@@ -832,6 +837,7 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+    $('body').scrollspy({ target: '#sidebar-wrapper', offset: 80 })
     $(".scroll-to").click(function(e) {
         e.preventDefault();
         var did = $(this).attr('href');
