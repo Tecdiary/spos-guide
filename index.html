@@ -27,7 +27,7 @@
             <div class="navbar navbar-default navbar-fixed-top">
               <div class="container-fluid">
                 <div class="navbar-header">
-                  <a class="navbar-brand" href="../">Simple POS Guide</a>
+                  <a class="navbar-brand">Simple POS Guide</a>
                   <button href="#menu-toggle" id="menu-toggle" type="button" class="navbar-toggle">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -48,7 +48,7 @@
         <ul class="sidebar-nav nav">
             <li class="sidebar-brand"><a href="#">SimplePOS Guide</a></li>
             <li><a class="scroll-to" href="#install">Install Guide</a></li>
-            <!-- <li><a href="#update">Update Guide</a></li> -->
+            <li><a class="scroll-to" href="#update">Update Guide</a></li>
             <li><a class="scroll-to" href="#hardware">Hardware</a></li>
             <li><a class="scroll-to" href="#demo">Demo</a></li>
             <li><a class="scroll-to" href="#credit">Credits</a></li>
@@ -67,7 +67,7 @@
                     <div class="jumbotron">
                         <h1 class="text-center">Simple POS - Point of Sale Made Easy</h1>
                         <p class="text-center">Simple POS is PHP and jQuery based web application.</p>
-                        <p class="text-center">Documentation Version 1.0</p>
+                        <p class="text-center">Documentation Version 1.0.1</p>
                     </div>
                     <div class="well">
                         <p><strong>Public Beta</strong></p>
@@ -96,15 +96,47 @@
                                         <li>Base URL must not have space and it should end with a trailing slash</li>
                                     </ul>
                                 </li>
-                                <li>If every thing goes smooth, You will be redirect to final page with login details.</li>
+                                <li>If everything goes smooth, you will be redirect to final page with login details.</li>
                                 <li>Remove the install folder before start using the Simple POS.</li>
-                                <li>Login using default username and password, and edit user to change login details. Simple POS is ready to use.</li>
+                                <li>Login using default username and password. You should can add new admin account before deleting/editing default account.</li>
                             </ol>
                             <h4>Request Installation</h4>
-                            <p>We will provide the service to install the item for $10.00 (30 minutes cost). To request the installation, please send $10 to saleem@tecdiary.com by Paypal or Skrill and email us your license file and hosting control panel details with reference of your payment to support@tecdiary.com</p>
+                            <p>We will provide the service to install the item for $10 To request the installation, please send $10 to saleem@tecdiary.com by Paypal or Skrill and email us your license file and hosting control panel details with reference of your payment to support@tecdiary.com</p>
                         </div>
                     </div>
 
+                    <div class="set" id="update">
+                        <div class="set-description">
+                            <h3>Updating from V3</h3>
+                            <div class="highlight">
+                            <p class="intro">We have added the update tool for testing purpose and feedback only. If you are advance user and have good command and experience of backup/restore (files & database) then you can try this update tool.</p>
+                            <p>Please don't try this on your production version. Backup and restore the production version to different location and then try to update that. We are not providing any support for this at least for this version.</p>
+                            </div>
+                            <h4>Please follow these steps to update from v3.x to beta v4.0</h4>
+                            <ol>
+                                <li><strong>Backup all your files and database.</strong> Save/download the backup. <strong>(MUST)</strong></li>
+                                <li>Save/download database config file (<code>spos/config/database.php</code>) on your computer</li>
+                                <li>Delete all old files/folders except <strong>assets/uploads</strong> as your product images and other upload data is in this <strong>assets/uploads</strong>.</li>
+                                <li>Upload all the new files/folders (from your downloaded file).</li>
+                                <li>Move all the contents of <strong>assets/uploads/</strong> to newly uploaded <strong>uploads/</strong> folder.</li>
+                                <li>Once all the files are uploaded. We need to update the datase configuratiuon to the newly uploaded database configuration file (<code>app/config/database.php</code>) form the locally saved copy of database config file in step 2. <code>You need to update the hostname, username, password and database.</code>
+                                <br>LETS ACCESS UPDATE TOOL FROM BROWSER, UPDATE TOOL WON'T ASK FOR DATABASE CONFIG AS WE HAVE ALREADY UPDATED THE DATABASE SETTINGS.</li>
+                                <li>Open the browser and type <strong><code>http://yourdomain.com/pathtoupload/update/index.php</code></strong></li>
+                                <li>Step 1: Pre-install system checklist - If there is any issue with checklist, you will need to fix it first to proceed to next step.</li>
+                                <li>Step 2: Provide your Envato Username and Purchase Code to validate and update your license.</li>
+                                <li>Step 3: Site Config: Please fill in you <strong>Base URL</strong> and select your timezone. <code>You must check the <strong>base url</strong> as update tool can guess it wrong.</code> This is the same base_url that you have in your old spos/config/config.php file
+                                    <ul>
+                                        <li>Base URL for public_html or www/htdocs folder will be <code>http://yourdomain.com/</code> or <code>http://localhost/</code></li>
+                                        <li>Base URL for sub-domain will be <code>http://subdomain.yourdomain.com/</code> </li>
+                                        <li>Base URL for sub-folder will be <code>http://yourdomain.com/subfolder/</code> or <code>http://localhost/subfolder/</code> </li>
+                                        <li>Base URL must not have space and it should end with a trailing slash</li>
+                                    </ul>
+                                </li>
+                                <li>If everything goes smooth, you will be redirect to final page with update complete message.</li>
+                                <li>Remove the install and update folder before start using the Simple POS. If you find any issue with update, please email to support@tecdiary.com</li>
+                            </ol>
+                        </div>
+                    </div>
                     <div class="set" id="hardware">
                         <div class="set-description">
                             <h3>Hardware</h3>
@@ -379,10 +411,12 @@
                                                 <a class="default">How does discount applied to the products and order?</a>
                                                 <div class="faq-content">
                                                     <p>
-                                                        <strong>Product level discount</strong> will be applied on the product price before any tax calculation. <code>i.e, Product Price - Product Discount + Product Tax (product tax calculated on Product Price - Product Discount)</code>
+                                                        <strong>Product level discount</strong> will be applied on the product price before any tax calculation.<br>
+                                                        <code>i.e, Product Price - Product Discount + Product Tax (product tax calculated on Product Price - Product Discount)</code>
                                                     </p>
                                                     <p>
-                                                        <strong>Order level discount </strong>will be applied on the order total (total + product price) before any order tax calculation. <code>i.e, Order Total - Order Discount + Order Tax (order tax calculated on Order Total - Order Discount)</code>
+                                                        <strong>Order level discount </strong>will be applied on the order total (total + product price) before any order tax calculation.<br>
+                                                        <code>i.e, Order Total - Order Discount + Order Tax (order tax calculated on Order Total - Order Discount)</code>
                                                     </p>
                                                 </div>
                                             </li>
@@ -695,149 +729,140 @@
         </div>
     </div>
 
-    <div id="big-wrap">
-    <div id="inner-wrap">
+    <div class="set" id="others">
+        <div class="inner-set" id="language">
+            <div class="set-description">
+                <h3>Adding Language</h3>
+                <p>Guide to add new language.
+                    <ul>
+                        <li>Please create new folder in app/language/ and name it <code>yourlanguagename</code></li>
+                        <li>Folder name should be without space and all lower letters.</li>
+                        <li>Copy all the files from app/language/english/ and paste then to app/language/<code>yourlanguagename</code>/</li>
+                        <li>Now you can translate these all file to your language</li>
+                        <li>Download flag image (format: png, width: 16px, height: 11px) and paste it in themes/default/assets/images/</li>
+                        <li>You can add new key to language array. (See Code Section)</li>
+                    </ul>
+                </p>
+                <p>
+                    Please replace the <code>yourlanguagename</code> with your language For example, spanish, french, chinese etc
+                </p>
+            </div>
+            <div class="set-dev">
 
+                <p>To add select option in setting's language</p>
+                <p>Please open <code>themes/<strong>default</strong>/views/settings/index.php</code> and search for ( <code>$available_lang =</code> ) You can replace the <code><strong>default</strong></code> with your theme if you are using different theme. You can add new array key for your language as following:<br><br></p>
+                <pre><code>$available_lang = array(<br>       'english' => 'English', <br>        'yourlanguagename' => 'Your Language Name', <br>        );</code></pre>
+                <code>yourlanguagename</code> must be same folder name that you created in app/language/
 
-<div class="set" id="others">
-    <div class="inner-set" id="language">
-        <div class="set-description">
-            <h3>Adding Language</h3>
-            <p>Guide to add new language.
-                <ul>
-                    <li>Please create new folder in app/language/ and name it <code>yourlanguagename</code></li>
-                    <li>Folder name should be without space and all lower letters.</li>
-                    <li>Copy all the files from app/language/english/ and paste then to app/language/<code>yourlanguagename</code>/</li>
-                    <li>Now you can translate these all file to your language</li>
-                    <li>Download flag image (format: png, width: 16px, height: 11px) and paste it in themes/default/assets/images/</li>
-                    <li>You can add new key to language array. (See Code Section)</li>
-                </ul>
-            </p>
-            <p>
-                Please replace the <code>yourlanguagename</code> with your language For example, spanish, french, chinese etc
-            </p>
-        </div>
-        <div class="set-dev">
-
-            <p>To add select option in setting's language</p>
-            <p>Please open <code>themes/<strong>default</strong>/views/settings/index.php</code> and search for ( <code>$available_lang =</code> ) You can replace the <code><strong>default</strong></code> with your theme if you are using different theme. You can add new array key for your language as following:<br><br></p>
-            <pre><code>$available_lang = array(<br>       'english' => 'English', <br>        'yourlanguagename' => 'Your Language Name', <br>        );</code></pre>
-            <code>yourlanguagename</code> must be same folder name that you created in app/language/
-
-        </div>
-
-    </div>
-</div>
-
-<div class="set">
-    <div class="inner-set" id="add_column">
-        <div class="set-description">
-            <h3>Add/Remove column to table</h3>
-            <p>Here are the steps to follow</p>
-            <p><strong>To add a column you will need to</strong></p>
-            <ol>
-                <li>Modify the select statement and select the desired column, in the controller.</li>
-                <li>Add new element to datatables columns (should be in sequence) in the relative view file.</li>
-                <li>Lastly add the th tag with column heading to table head (should be in sequence).</li>
-            </ol>
-            <p><strong>To remove a column you will need to</strong></p>
-            <ol>
-                <li>Modify the select statement and remove the desired column, in the controller.</li>
-                <li>Remove the element form columns of datatables in the relative view file.</li>
-                <li>Lastly Remove the th tag with column heading to table head.</li>
-            </ol>
-        </div>
-    </div>
-</div>
-
-<div class="set">
-    <div class="inner-set" id="datatable">
-        <div class="set-description">
-            <h3>Sorting Tables</h3>
-            <p>We have used datatables library for all listing tables. If you need to change any table sorting column, you will need to modify the view file.</p>
-            <p>
-                The first column of the table will start from index 0 and then increase 1 with each columns. Let say you want to sort the table with 4th column then you will need to use index 3 as <code>"aaSorting": [[3, "asc"]],</code>
-            </p>
-            <p>
-                You can change the sorting for any table by modifying the files as described here.
-            </p>
-
-        </div>
-        <div class="set-dev">
-            <p>
-                For example, if you need to change the sorting for customers, you will need to edit the /theme/default/customers/index.php and search
-            </p>
-            <pre><code>"aaSorting": [[0, "asc"]],</code></pre>
-            <p>This is being sorted for first table column, If you want to sort it by id (2nd table column) then you will need to change as </p>
-            <pre><code>"aaSorting": [[1, "asc"]],</code></pre>
-            <p>You even can sort the table with multiple columns as </p>
-            <pre><code>"aaSorting": [[0, "asc"], [1, "asc"]],</code></pre>
+            </div>
 
         </div>
     </div>
-</div>
 
-<div class="set">
-    <div class="inner-set" id="barcode">
-        <div class="set-description">
-            <h3>Barcodes and Labels</h3>
-            <p>Barcode page is designed to be printed with desktop laser printers. Barcode sheet or barcode pages have 2 columns' table (2 product per row and medium barcode image with 60px height). For labels, each label will be printed on different page as most of you will print label with label printers. We don't provide any support for modify the design.</p>
-            <p>
-                If you need to modify any of the barcode/label page to show/remove any information, you can do so by modify the products controller. The functions are mentioned that handle the pages.
-            </p>
-
-        </div>
-        <div class="set-dev">
-            <p>
-                Functions/Methods handling the barcodes and labels pages are
-                <ul class="s-ul">
-                    <li><code class="white">single_barcode()</code> - Handles barcode printing for single products</li>
-                    <li><code class="white">single_label()</code> - Handles label printing for single products</li>
-                    <li><code class="white">print_barcodes()</code> - Handles barcode printing for multiple products based on category</li>
-                    <li><code class="white">print_lables()</code> - Handles label printing for multiple products based on category</li>
-                </ul>
-            </p>
-            <p>File: <code>app/controllers/products.php</code></p>
+    <div class="set">
+        <div class="inner-set" id="add_column">
+            <div class="set-description">
+                <h3>Add/Remove column to table</h3>
+                <p>Here are the steps to follow</p>
+                <p><strong>To add a column you will need to</strong></p>
+                <ol>
+                    <li>Modify the select statement and select the desired column, in the controller.</li>
+                    <li>Add new element to datatables columns (should be in sequence) in the relative view file.</li>
+                    <li>Lastly add the th tag with column heading to table head (should be in sequence).</li>
+                </ol>
+                <p><strong>To remove a column you will need to</strong></p>
+                <ol>
+                    <li>Modify the select statement and remove the desired column, in the controller.</li>
+                    <li>Remove the element form columns of datatables in the relative view file.</li>
+                    <li>Lastly Remove the th tag with column heading to table head.</li>
+                </ol>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="set">
-    <div class="inner-set" id="support">
-        <div class="set-description">
-            <h3>Request Installation</h3>
-            <p>
-                We will provide the service to install the item for $10.00 (30 minutes cost). To request the installation, please send $10 to saleem@tecdiary.com by Paypal or Skrill and email us your license file and hosting control panel details with reference of your payment to support@tecdiary.com
-            </p>
-        </div>
+    <div class="set">
+        <div class="inner-set" id="datatable">
+            <div class="set-description">
+                <h3>Sorting Tables</h3>
+                <p>We have used datatables library for all listing tables. If you need to change any table sorting column, you will need to modify the view file.</p>
+                <p>
+                    The first column of the table will start from index 0 and then increase 1 with each columns. Let say you want to sort the table with 4th column then you will need to use index 3 as <code>"aaSorting": [[3, "asc"]],</code>
+                </p>
+                <p>
+                    You can change the sorting for any table by modifying the files as described here.
+                </p>
 
-        <div class="set-description">
-            <h3>Request Update</h3>
-            <p>
-                We will provide the service to update the item from v3 for $20.00 (1 hour cost). To request the update, please send $20 to saleem@tecdiary.com by Paypal or Skrill and email us your license file, v3 installation path/link with login details and hosting control panel details with reference of your payment to support@tecdiary.com
-            </p>
-        </div>
+            </div>
+            <div class="set-dev">
+                <p>
+                    For example, if you need to change the sorting for customers, you will need to edit the /theme/default/customers/index.php and search
+                </p>
+                <pre><code>"aaSorting": [[0, "asc"]],</code></pre>
+                <p>This is being sorted for first table column, If you want to sort it by id (2nd table column) then you will need to change as </p>
+                <pre><code>"aaSorting": [[1, "asc"]],</code></pre>
+                <p>You even can sort the table with multiple columns as </p>
+                <pre><code>"aaSorting": [[0, "asc"], [1, "asc"]],</code></pre>
 
-        <div class="set-description">
-            <h3>Custom Modifications</h3>
-            <p>
-                Yes, we do provide customization services to modify/enhance the item functionality to suit your needs. We charge $20 per hour. Please email to saleem@tecdiary.com to check availability, estimated cost and time.
-            </p>
-        </div>
-
-        <div class="set-description">
-            <h3>Feature Request</h3>
-            <p>Yes, we would love to listen your requests/feedback. Please prepare the details with examples before emailing to saleem@tecdiary.com</p>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="clear"></div>
+    <div class="set">
+        <div class="inner-set" id="barcode">
+            <div class="set-description">
+                <h3>Barcodes and Labels</h3>
+                <p>Barcode page is designed to be printed with desktop laser printers. Barcode sheet or barcode pages have 2 columns' table (2 product per row and medium barcode image with 60px height). For labels, each label will be printed on different page as most of you will print label with label printers. We don't provide any support for modify the design.</p>
+                <p>
+                    If you need to modify any of the barcode/label page to show/remove any information, you can do so by modify the products controller. The functions are mentioned that handle the pages.
+                </p>
 
-</div>
-</div>
+            </div>
+            <div class="set-dev">
+                <p>
+                    Functions/Methods handling the barcodes and labels pages are
+                    <ul class="s-ul">
+                        <li><code class="white">single_barcode()</code> - Handles barcode printing for single products</li>
+                        <li><code class="white">single_label()</code> - Handles label printing for single products</li>
+                        <li><code class="white">print_barcodes()</code> - Handles barcode printing for multiple products based on category</li>
+                        <li><code class="white">print_lables()</code> - Handles label printing for multiple products based on category</li>
+                    </ul>
+                </p>
+                <p>File: <code>app/controllers/products.php</code></p>
+            </div>
+        </div>
+    </div>
 
+    <div class="set">
+        <div class="inner-set" id="support">
+            <div class="set-description">
+                <h3>Request Installation</h3>
+                <p>
+                    We will provide the service to install the item for $10 To request the installation, please send $10 to saleem@tecdiary.com by Paypal or Skrill and email us your license file and hosting control panel details with reference of your payment to support@tecdiary.com
+                </p>
+            </div>
 
+            <div class="set-description">
+                <h3>Request Update</h3>
+                <p>
+                    We will provide the service to update the item from v3 for $20 To request the update, please send $20 to saleem@tecdiary.com by Paypal or Skrill and email us your license file, v3 installation path/link with login details and hosting control panel details with reference of your payment to support@tecdiary.com
+                </p>
+            </div>
+
+            <div class="set-description">
+                <h3>Custom Modifications</h3>
+                <p>
+                    Yes, we do provide customization services to modify/enhance the item functionality to suit your needs. We charge $25 per hour. Please email to saleem@tecdiary.com to check availability, estimated cost and time.
+                </p>
+            </div>
+
+            <div class="set-description">
+                <h3>Feature Request</h3>
+                <p>Yes, we would love to listen your requests/feedback. Please prepare the details with examples before emailing to saleem@tecdiary.com</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="clear"></div>
 
 </div>
 </div>
