@@ -135,6 +135,26 @@
                                 <li>If everything goes smooth, you will be redirect to final page with update complete message.</li>
                                 <li>Remove the install and update folder before start using the Simple POS. If you find any issue with update, please email to support@tecdiary.com</li>
                             </ol>
+                            <h3>Update Instruction (from 4.0.x to latest)</h3>
+                            <p>Requirements: Apache 2.2+, Mysql 5.4+, PHP 5.3+ </p>
+                            <ol>
+                            </li>
+                            <li>Extract the downloaded file.</li>
+                            <li>Copy Beta v4.0.x/app/config/migration.php, paste and replace the old file in yourinstallationdirectory/app/config/</li>
+                            <li>Copy Beta v4.0.x/themes, paste and replace the old folder in yourinstallationdirectory/</li>
+                            <li>Copy
+                            <ol>
+                            <li>Beta v4.0.x/app/controllers</li>
+                            <li>Beta v4.0.x/app/core</li>
+                            <li>Beta v4.0.x/app/helpers</li>
+                            <li>Beta v4.0.x/app/language</li>
+                            <li>Beta v4.0.x/app/libraries</li>
+                            <li>Beta v4.0.x/app/migrations</li>
+                            <li>Beta v4.0.x/app/models</li>
+                            </ol>
+                             Paste and replace the old folders in yourinstallationdirectory/app/</li>
+                             <li>There is no db change, so you are done.</li>
+                            </ol>
                         </div>
                     </div>
                     <div class="set" id="hardware">
@@ -752,8 +772,8 @@
                 <p>To add select option in setting's language</p>
                 <p>Please open <code>themes/<strong>default</strong>/views/settings/index.php</code> and search for ( <code>$available_lang =</code> ) You can replace the <code><strong>default</strong></code> with your theme if you are using different theme. You can add new array key for your language as following:<br><br></p>
                 <pre><code>$available_lang = array(<br>       'english' => 'English', <br>        'yourlanguagename' => 'Your Language Name', <br>        );</code></pre>
-                <code>yourlanguagename</code> must be same folder name that you created in app/language/
-
+                <p><code>yourlanguagename</code> must be same folder name that you created in app/language/</p>
+                <p><strong>If you are getting the error "<code>Unable to load the requested language file: language/yourlanguagename/form_validation_lang.php or calendar_lang.php</code>" Then you will need to add your language in lib/language/ as you did above for app/language/ and translate the system language files to your language.</strong></p>
             </div>
 
         </div>
