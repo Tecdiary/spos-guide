@@ -162,7 +162,7 @@
                             <p>&nbsp;</p>
                             <h4>1. Receipt Printers:</h4>
                             <p>
-                                We have tested the update V4 with Bixolon SRP-350II (USB) with Web Browser Printing and Java Applet by adding qz print plugin that will support these printers
+                                We have tested the update V4 with Bixolon SRP-350II (USB) and Xprinter XP-Q200II (LAN Interface).
                             </p>
                             <h4>Compatibility</h4>
                             <strong>Interfaces and operating systems</strong>
@@ -276,7 +276,7 @@
                             <h4>2. Barcode Scanners/Readers:</h4>
                             <p></p>
                             <p>
-                                Any of the barcode scanners/readers will work fine with v3 as long as it can read accurately.
+                                Any of the barcode scanners/readers will work fine with v4 as long as it can read accurately.
                             </p>
                             <p>&nbsp;</p>
 
@@ -293,10 +293,10 @@
                             <h4>4. Cash Drawers: </h4>
                             <p></p>
                             <p>
-                                You should buy the cash drawers that can be connected to pos printer. To use cash drawers, you printer should have the port to connect cash drawer as <strong>Bixolon SRP350II</strong>.
+                                You should buy the cash drawers that can be connected to pos printer. To use cash drawers, you printer should have the port to connect cash drawer as Bixolon SRP350II and Xprinter XP-Q200II.
                             </p>
                             <p><strong>For Browser Print,</strong> you might need to set your printer to open cash drawer before printing.</p>
-                            <p><strong>For Java QZ Print,</strong> It will be fine as cash drawer will be opened with printing and can be opened without printing.</p>
+                            <p><strong>For Localhost/PHP POS Print Server,</strong> It will be fine as cash drawer will be opened with printing and can be opened without printing.</p>
                             <p>&nbsp;</p>
 
                             <h4>5. For barcode and label printing:</h4>
@@ -488,26 +488,6 @@
                                                 <div class="faq-content">
                                                     <p>
                                                         Please modify the app_lang.php in app/language/english/. If you are not using English then see the file in app/language/yourLanguageFolder/
-                                                    </p>
-                                                </div>
-                                            </li>
-
-                                            <li>
-                                                <a class="default">Why POS brings me to Java page OR my browser keep blocking the Java?</a>
-                                                <div class="faq-content">
-                                                    <p>
-                                                        If you have enable the Java applet and added your domain to Exception Site List as said in the POS settings page.
-                                                    </p>
-                                                    <p>
-                                                        <ul>
-                                                            <li>You are being redirect to Java page, please download the new Java installer and install it.</li>
-                                                            <li>Your browser blocking the Java applet even is you have already added the domain to Java Exception Site List, please allow it in your browser.</li>
-                                                            <li>Your get qz plug-in not loaded error message, please check if the browser is not blocking the Java. Restoring the security prompts in Java Security might help. </li>
-                                                            <li>Browser keep loading the page and never stop, your java is stop responding, please open task manage and kill jp2launcher.exe/Java/Plugin Container and reload the page. If still same, please Restoring Security Prompts in Java Security settings.</li>
-                                                        </ul>
-                                                    </p>
-                                                    <p class="bold">
-                                                        You think, this is giving too much trouble, please disable the Java applet in settings and let browser handle printing.
                                                     </p>
                                                 </div>
                                             </li>
