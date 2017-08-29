@@ -299,7 +299,15 @@
                             <p><strong>For Localhost/PHP POS Print Server,</strong> It will be fine as cash drawer will be opened with printing and can be opened without printing.</p>
                             <p>&nbsp;</p>
 
-                            <h4>5. For barcode and label printing:</h4>
+                            <h4>5. Customer Display: </h4>
+                            <p></p>
+                            <p>
+                                In the top bar there is monitor icon (Customer Display) to open customer display window. You need to have dual display setup to show the window to customer. To setup the dual display, please check the FAQ "How can I setup customer display in POS?".
+                            </p>
+                            <p><strong>Only Dual Display, No Digital Customer Display is Supported.</strong></p>
+                            <p>&nbsp;</p>
+
+                            <h4>6. For barcode and label printing:</h4>
                             <p></p>
                             <p>
                                 Any desktop laser print will work fine for barcode printing. The label print should work with label printer but the design is very simple and we will not offer any support to customize this. You can customize as you like or hire developer.
@@ -528,6 +536,23 @@
                                                 <div class="cd-faq-content">
                                                     <p>
                                                         <strong>Yes, by modifying a line of code</strong>, please open app/controllers/pos.php and search for <code>redirect("pos/view/" . $sale['sale_id']);</code> replace it with <code>redirect("pos");</code> Now after sale, system will redirect you back to POS instead of view receipt page.
+                                                    </p>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <a class="default" href="#">How can I setup customer display in POS?</a>
+                                                <div class="cd-faq-content">
+                                                    <p>
+                                                        You can click the monitor icon (Customer Display) in topbar at pos screen and then display it to your 2nd monitor. Here is the guide to setup dual display.
+                                                    </p>
+                                                    <p>
+                                                        <ul>
+                                                            <li><a href="https://youtu.be/-A56CaOO3v8" target="_blank">Setting Up Dual Monitors on Windows</a></li>
+                                                            <li><a href="https://youtu.be/VOI-wVhV338" target="_blank">Set up Dual monitors on Windows laptop</a></li>
+                                                            <li><a href="https://youtu.be/-MIKLP6bRnc" target="_blank">Set up Dual Displays on Mac</a></li>
+                                                            <li><a href="https://youtu.be/OH5Ot6ObBls" target="_blank">Connect Multiple Monitors to MacBook Pro / Air </a></li>
+                                                        </ul>
                                                     </p>
                                                 </div>
                                             </li>
