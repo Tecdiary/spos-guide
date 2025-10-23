@@ -1,0 +1,25 @@
+img {
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+@media print {
+  .VPNav,
+  .VPLocalNav,
+  .VPDocFooter {
+    display: none !important;
+  }
+  img {
+    box-shadow: none !important;
+  }
+  .actions {
+    display: none !important;
+  }
+  .vp-doc,
+  .custom-block {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
